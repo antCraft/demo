@@ -1,0 +1,27 @@
+<div mat-dialog-content>
+  <p> Edit Employee</p>
+  <form #changeForm="ngForm" ng>
+      <div>
+   <mat-form-field>
+    <input matInput placeholder="Employee name" [(ngModel)]="data.empName" required name="empName" #empName>
+  </mat-form-field>
+   <mat-form-field>
+        <mat-select placeholder="Status" id = "empActive" [(ngModel)]="data.empActive"
+     required name="empActive" #empActive>
+      <mat-option  [value] = "true" >Yes</mat-option>
+      <mat-option [value] = "false" >No</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+      <mat-select placeholder="Department" id = "empDepartment" [(ngModel)]="data.empDepartment"
+     required name="empDepartment" #empDepartment>
+      <mat-option *ngFor="let department of departments" [value]="department.dpName" >{{department.dpName}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  </div>
+  </form>
+</div>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="changeForm.value" [disabled]="!changeForm.form.valid" cdkFocusInitial>Ok</button>
+</mat-dialog-actions>

@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Employee Info</h1>
+<div mat-dialog-content>
+  <ul>
+     <p>Employee name</p> 
+     <p>
+    <li>
+       <span>  {{data.empName}}</span>
+    </li>
+    </p>
+   <p>Employee status </p>  
+   <p>
+    <li>
+    <span>  {{data.empActive ? 'Yes' : 'No'}}</span>
+    </li>
+    </p>
+    <p>Employee department</p>
+    <p>
+    <li>
+      <span > {{data.empDepartment}} </span> 
+    </li>
+    </p>
+  </ul>
+</div>
